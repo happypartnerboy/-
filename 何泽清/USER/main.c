@@ -13,7 +13,7 @@
 #include "text.h"
 #include "sgp30.h"
 #include "dht11.h" 	
- 
+#include "adc.h"
 /************************************************
  ALIENTEK战舰STM32开发板实验40
  汉字显示 实验 
@@ -45,6 +45,8 @@ void Delay (uint32_t nCount);
   uint16_t tvoc_ppb, co2_eq_ppm;
   uint32_t iaq_baseline;
   uint16_t ethanol_signal, h2_signal;
+	u16 adcx;
+	float temp;
 	delay_init();	    	 //延时函数初始化	  
   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置中断优先级分组为组2：2位抢占优先级，2位响应优先级
 	uart_init(115200);	 	//串口初始化为115200
@@ -54,6 +56,7 @@ void Delay (uint32_t nCount);
 	LCD_Init();			   		//初始化LCD   
 	W25QXX_Init();				//初始化W25Q128
 	DHT11_Init();
+	Adc_Init();		  		//ADC初始化
  	my_mem_init(SRAMIN);		//初始化内部内存池
 	exfuns_init();				//为fatfs相关变量申请内存  
  	f_mount(fs[0],"0:",1); 		//挂载SD卡 
@@ -62,12 +65,6 @@ void Delay (uint32_t nCount);
 	printf("delay_us  start\n");
 	delay_us(1);
 	printf("delay_us  end\n");
-#if 0
-	RCC_ClocksTypeDef RCC_Clocks;
-	/* Configure SysTick IRQ and SysTick Timer to generate interrupts every 500*/
-	RCC_GetClocksFreq(&RCC_Clocks);
-	SysTick_Config(RCC_Clocks.HCLK_Frequency / 100);
-#endif
 	while(font_init()) 			//检查字库
 	{
 UPD:    
@@ -96,7 +93,22 @@ UPD:
 		LCD_Clear(WHITE);//清屏	       
 	}  
 	LCD_display();
-//编写自己的相关业务	
+//编写自己的相关业务
+	while(1)
+	{
+		adcx=Get_Adc_Average(ADC_Channel_1,10);
+		printf("adcx = %d\n",adcx);
+		temp=(float)adcx*(3.3/4096);
+		adcx=temp;
+		printf("adcx = %d\n",adcx);
+		temp-=adcx;
+		temp*=1000;
+		printf("temp = %d\n",temp);
+		delay_ms(250);	
+	}
+
+	
+#if 0
 		while(1)
 	{	    	    
  		if(t%10==0)			//每100ms读取一次
@@ -115,16 +127,19 @@ UPD:
 		//LED进行数据刷新
 		LCD_display();
 	}
+#endif
 	   /* Busy loop for initialization. The main loop does not work without a sensor. */
 #if 0
   while (sgp_probe() != STATUS_OK) {
          printf("SGP sensor probing failed...\r\n"); 
 			   Delay(0x400000); 
     }
+	
     printf("SGP sensor probing successful!\r\n"); 
-
     /* Read gas signals */
+		printf("huxiaoguang 1\n");
     err = sgp_measure_signals_blocking_read(&ethanol_signal,&h2_signal);
+		printf("huxiaoguang 2\n");
     if (err == STATUS_OK) {
          //Print ethanol signal and h2 signal 
          printf("Ethanol signal: %u\t", ethanol_signal); 
@@ -133,7 +148,7 @@ UPD:
          printf("error reading signals\r\n"); 
     }
 
-
+		
     /* Consider the two cases (A) and (B):
      * (A) If no baseline is available or the most recent baseline is more than
      *     one week old, it must discarded. A new baseline is found with

@@ -258,15 +258,23 @@ static s16 sgp_run_profile(const struct sgp_profile *profile) {
  * Return:      A pointer to the profile or NULL if the profile does not exists
  */
 static const struct sgp_profile *sgp_get_profile_by_number(u16 number) {
-    u8 i;
+    u32 i;
     const struct sgp_profile *profile = NULL;
-
+		printf("huxiaoguang 8\r\n");
+		printf("client_data.otp_features->number_of_profiles = %d \r\n",client_data.otp_features->number_of_profiles);
+		printf("huxiaoguang number = %d\r\n",number);
     for (i = 0; i < client_data.otp_features->number_of_profiles; i++) {
         profile = client_data.otp_features->profiles[i];
+			printf("huxiaoguang profile->number = %d i = %d\r\n",profile->number, i);
+			printf("client_data.otp_features->profiles[2] = %d \r\n",client_data.otp_features->profiles[2]->number);
+			printf("client_data.otp_features->profiles[3] = %d \r\n",client_data.otp_features->profiles[3]->number);
+			printf("client_data.otp_features->profiles[4] = %d \r\n",client_data.otp_features->profiles[4]->number);
+			printf("client_data.otp_features->profiles[5] = %d \r\n",client_data.otp_features->profiles[5]->number);
+			printf("client_data.otp_features->profiles[6] = %d \r\n",client_data.otp_features->profiles[6]->number);
         if (number == profile->number)
             break;
     }
-
+		printf("huxiaoguang 9\r\n");
     if (i == client_data.otp_features->number_of_profiles) {
         return NULL;
     }
@@ -283,11 +291,11 @@ static const struct sgp_profile *sgp_get_profile_by_number(u16 number) {
  */
 static s16 sgp_run_profile_by_number(u16 number) {
     const struct sgp_profile *profile;
-
+		printf("huxiaoguang 5\n");
     profile = sgp_get_profile_by_number(number);
     if (profile == NULL)
         return STATUS_FAIL;
-
+		printf("huxiaoguang 6\n");
     if (sgp_run_profile(profile) == STATUS_FAIL)
         return STATUS_FAIL;
 
@@ -563,10 +571,10 @@ s16 sgp_measure_co2_eq_blocking_read(u16 *co2_eq_ppm) {
  */
 s16 sgp_measure_signals_blocking_read(u16 *ethanol_signal,
                                       u16 *h2_signal) {
-
+		printf("huxiaoguang 3\n");
     if (sgp_run_profile_by_number(PROFILE_NUMBER_MEASURE_SIGNALS) == STATUS_FAIL)
         return STATUS_FAIL;
-
+		printf("huxiaoguang 4\n");
     *ethanol_signal = client_data.word_buf[0];
     *h2_signal = client_data.word_buf[1];
 

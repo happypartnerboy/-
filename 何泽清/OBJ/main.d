@@ -52,3 +52,4 @@
 ..\obj\main.o: ..\HARDWARE\SGP30\sensirion_common.h
 ..\obj\main.o: ..\HARDWARE\SGP30\sensirion_i2c.h
 ..\obj\main.o: ..\HARDWARE\DHT11\dht11.h
+..\obj\main.o: ..\HARDWARE\ADC\adc.h

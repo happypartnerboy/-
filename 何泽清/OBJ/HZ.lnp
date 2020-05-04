@@ -13,6 +13,7 @@
 "..\obj\sgp30.o"
 "..\obj\sgp30_featureset.o"
 "..\obj\dht11.o"
+"..\obj\adc.o"
 "..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\usart.o"
