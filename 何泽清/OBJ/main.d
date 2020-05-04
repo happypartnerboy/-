@@ -47,3 +47,8 @@
 ..\obj\main.o: ..\FATFS\exfuns\exfuns.h
 ..\obj\main.o: ..\TEXT\text.h
 ..\obj\main.o: ..\TEXT\fontupd.h
+..\obj\main.o: ..\HARDWARE\SGP30\sgp30.h
+..\obj\main.o: ..\HARDWARE\SGP30\sensirion_arch_config.h
+..\obj\main.o: ..\HARDWARE\SGP30\sensirion_common.h
+..\obj\main.o: ..\HARDWARE\SGP30\sensirion_i2c.h
+..\obj\main.o: ..\HARDWARE\DHT11\dht11.h

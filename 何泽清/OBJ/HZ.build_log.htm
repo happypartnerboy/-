@@ -29,25 +29,35 @@ Build target 'HZ'
 compiling main.c...
 main.c(30): warning:  #69-D: integer conversion resulted in truncation
   static u8 CO2Concentration = 500; 
-main.c(33): warning:  #1295-D: Deprecated declaration LCD_display_init - give arg types
-  void LCD_display_init();
-main.c(38): warning:  #177-D: variable "fontcnt" was declared but never referenced
-        u32 fontcnt;              
-main.c(39): warning:  #177-D: variable "i" was declared but never referenced
+main.c(33): warning:  #1295-D: Deprecated declaration LCD_display - give arg types
+  void LCD_display();
+main.c(40): warning:  #177-D: variable "fontcnt" was declared but never referenced
+        u32 fontcnt; 
+main.c(41): warning:  #177-D: variable "i" was declared but never referenced
         u8 i,j;
-main.c(39): warning:  #177-D: variable "j" was declared but never referenced
+main.c(41): warning:  #177-D: variable "j" was declared but never referenced
         u8 i,j;
-main.c(40): warning:  #177-D: variable "fontx" was declared but never referenced
+main.c(42): warning:  #177-D: variable "fontx" was declared but never referenced
         u8 fontx[2];//gbk码
-main.c(41): warning:  #177-D: variable "t" was declared but never referenced
-        u8 key,t;           
-main.c(58): warning:  #177-D: label "UPD" was declared but never referenced
+main.c(44): warning:  #177-D: variable "err" was declared but never referenced
+        int16_t err;
+main.c(45): warning:  #177-D: variable "tvoc_ppb" was declared but never referenced
+    uint16_t tvoc_ppb, co2_eq_ppm;
+main.c(45): warning:  #177-D: variable "co2_eq_ppm" was declared but never referenced
+    uint16_t tvoc_ppb, co2_eq_ppm;
+main.c(46): warning:  #177-D: variable "iaq_baseline" was declared but never referenced
+    uint32_t iaq_baseline;
+main.c(47): warning:  #177-D: variable "ethanol_signal" was declared but never referenced
+    uint16_t ethanol_signal, h2_signal;
+main.c(47): warning:  #177-D: variable "h2_signal" was declared but never referenced
+    uint16_t ethanol_signal, h2_signal;
+main.c(73): warning:  #177-D: label "UPD" was declared but never referenced
   UPD:    
-main.c: 8 warnings, 0 errors
+main.c: 13 warnings, 0 errors
 linking...
-Program Size: Code=64984 RO-data=8212 RW-data=448 ZI-data=1094696  
+Program Size: Code=65568 RO-data=8212 RW-data=448 ZI-data=1094696  
 FromELF: creating hex file...
-"..\OBJ\HZ.axf" - 0 Error(s), 8 Warning(s).
+"..\OBJ\HZ.axf" - 0 Error(s), 13 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   F:\单片机业务\MCU_design\何泽清\USER\RTE
