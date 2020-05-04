@@ -80,33 +80,7 @@ UPD:
 		delay_ms(1500);	
 		LCD_Clear(WHITE);//清屏	       
 	}  
-<<<<<<< HEAD
-
 	LCD_display_init();
-=======
-	POINT_COLOR=BLUE; 
-//温度
-	Show_Str(0,50,50,16,"温度:",16,0);	
-	Show_Str(80,50,20,16,"C",16,0);					//50 + 
-	
-//湿度
-	Show_Str(0,70,50,16,"湿度:",16,0);	
-	Show_Str(80,70,20,16,"%",16,0);
-	
-//氨气浓度
-	Show_Str(0,90,80,16,"氨气浓度:",16,0);	
-	Show_Str(110,90,25,16,"ppm",16,0);
-
-//二氧化碳浓度
-	Show_Str(0,110,110,16,"二氧化碳浓度:",16,0);	
-	Show_Str(145,110,25,16,"ppm",16,0);
-	
-	POINT_COLOR=RED; 
-	LCD_ShowNum(52,50,u8temperature,3,16);	
-	LCD_ShowNum(52,70,u8humidity,3,16);
-	LCD_ShowNum(82,90,AConcentration,3,16);
-	LCD_ShowNum(120,110,CO2Concentration,3,16);	
-
 #if 0
 	Show_Str(30,70,200,16,"GBK字库测试程序",16,0);				    	 
 	Show_Str(30,90,200,16,"正点原子@ALIENTEK",16,0);				    	 
