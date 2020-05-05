@@ -14,6 +14,7 @@
 #include "sgp30.h"
 #include "dht11.h" 	
 #include "adc.h"
+#include "stdio.h"
 /************************************************
  ALIENTEK战舰STM32开发板实验40
  汉字显示 实验 
@@ -27,7 +28,7 @@
 static u8 u8temperature 	= 25;
 static u8 u8humidity 		= 60;
 static u8 AConcentration = 5; 
-static u8 CO2Concentration = 500; 
+static u8 CO2Concentration = 244; 
 
 //LCD初始化显示
 void LCD_display();
@@ -46,7 +47,6 @@ void Delay (uint32_t nCount);
   uint32_t iaq_baseline;
   uint16_t ethanol_signal, h2_signal;
 	u16 adcx;
-	float temp;
 	delay_init();	    	 //延时函数初始化	  
   NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置中断优先级分组为组2：2位抢占优先级，2位响应优先级
 	uart_init(115200);	 	//串口初始化为115200
@@ -93,29 +93,16 @@ UPD:
 		LCD_Clear(WHITE);//清屏	       
 	}  
 	LCD_display();
-//编写自己的相关业务
-	while(1)
-	{
-		adcx=Get_Adc_Average(ADC_Channel_1,10);
-		printf("adcx = %d\n",adcx);
-		temp=(float)adcx*(3.3/4096);
-		adcx=temp;
-		printf("adcx = %d\n",adcx);
-		temp-=adcx;
-		temp*=1000;
-		printf("temp = %d\n",temp);
-		delay_ms(250);	
-	}
-
-	
-#if 0
+//编写自己的相关业务	
+#if 1
 		while(1)
 	{	    	    
  		if(t%10==0)			//每100ms读取一次
 		{				
 			DHT11_Read_Data(&u8temperature,&u8humidity);	//读取温湿度值			
-			printf("温度 temperature %d\r\n", u8temperature);
-			printf("湿度 humidity %d\r\n", u8humidity); 	   
+			adcx=Get_Adc(ADC_Channel_8);
+			AConcentration = (int)((adcx / 4096.0)*1500); 
+			AConcentration=1500 - AConcentration;
 		}				   
 	 	delay_ms(10);
 		t++;

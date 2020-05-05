@@ -1,5 +1,5 @@
 Dependencies for Project 'HZ', Target 'HZ': (DO NOT MODIFY !)
-F (.\main.c)(0x5EB03857)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\REMOTE -I..\HARDWARE\ADXL345 -I..\HARDWARE\DS18B20 -I..\HARDWARE\NRF24L01 -I..\HARDWARE\SRAM -I..\MALLOC -I..\HARDWARE\SD -I..\FATFS\exfuns -I..\FATFS\src -I..\USMART -I..\FATFS\src\option -I..\HARDWARE\SDIO -I..\TEXT -I..\HARDWARE\W25QXX -I..\HARDWARE\SGP30 -I..\HARDWARE\DHT11 -I..\HARDWARE\ADC-I F:\单片机业务\MCU_design\何泽清\USER\RTE-I D:\MDK5\install\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5\install\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5EB0B984)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\REMOTE -I..\HARDWARE\ADXL345 -I..\HARDWARE\DS18B20 -I..\HARDWARE\NRF24L01 -I..\HARDWARE\SRAM -I..\MALLOC -I..\HARDWARE\SD -I..\FATFS\exfuns -I..\FATFS\src -I..\USMART -I..\FATFS\src\option -I..\HARDWARE\SDIO -I..\TEXT -I..\HARDWARE\W25QXX -I..\HARDWARE\SGP30 -I..\HARDWARE\DHT11 -I..\HARDWARE\ADC-I F:\单片机业务\MCU_design\何泽清\USER\RTE-I D:\MDK5\install\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5\install\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\sys\sys.h)(0x5822B9CE)
 I (..\USER\stm32f10x.h)(0x5822B9CE)
 I (..\CORE\core_cm3.h)(0x5822B9CD)
@@ -52,7 +52,7 @@ I (..\HARDWARE\SGP30\sensirion_arch_config.h)(0x5B377C5E)
 I (..\HARDWARE\SGP30\sensirion_common.h)(0x5AEB1051)
 I (..\HARDWARE\SGP30\sensirion_i2c.h)(0x5B3786D0)
 I (..\HARDWARE\DHT11\dht11.h)(0x5EAF9B12)
-I (..\HARDWARE\ADC\adc.h)(0x5822B9C1)
+I (..\HARDWARE\ADC\adc.h)(0x5EB0A1CD)
 F (.\stm32f10x_it.c)(0x5822B9CE)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\REMOTE -I..\HARDWARE\ADXL345 -I..\HARDWARE\DS18B20 -I..\HARDWARE\NRF24L01 -I..\HARDWARE\SRAM -I..\MALLOC -I..\HARDWARE\SD -I..\FATFS\exfuns -I..\FATFS\src -I..\USMART -I..\FATFS\src\option -I..\HARDWARE\SDIO -I..\TEXT -I..\HARDWARE\W25QXX -I..\HARDWARE\SGP30 -I..\HARDWARE\DHT11 -I..\HARDWARE\ADC-I F:\单片机业务\MCU_design\何泽清\USER\RTE-I D:\MDK5\install\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5\install\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x5822B9CE)
 I (stm32f10x.h)(0x5822B9CE)
@@ -395,8 +395,8 @@ I (..\STM32F10x_FWLib\inc\misc.h)(0x5822B9CD)
 I (..\SYSTEM\delay\delay.h)(0x5822B9CE)
 I (..\SYSTEM\usart\usart.h)(0x5822B9CE)
 I (D:\MDK5\install\ARM\ARMCC\include\stdio.h)(0x5475F300)
-F (..\HARDWARE\ADC\adc.c)(0x5822B9C1)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\REMOTE -I..\HARDWARE\ADXL345 -I..\HARDWARE\DS18B20 -I..\HARDWARE\NRF24L01 -I..\HARDWARE\SRAM -I..\MALLOC -I..\HARDWARE\SD -I..\FATFS\exfuns -I..\FATFS\src -I..\USMART -I..\FATFS\src\option -I..\HARDWARE\SDIO -I..\TEXT -I..\HARDWARE\W25QXX -I..\HARDWARE\SGP30 -I..\HARDWARE\DHT11 -I..\HARDWARE\ADC-I F:\单片机业务\MCU_design\何泽清\USER\RTE-I D:\MDK5\install\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5\install\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\adc.o --omf_browse ..\obj\adc.crf --depend ..\obj\adc.d)
-I (..\HARDWARE\ADC\adc.h)(0x5822B9C1)
+F (..\HARDWARE\ADC\adc.c)(0x5EB0A1E4)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\REMOTE -I..\HARDWARE\ADXL345 -I..\HARDWARE\DS18B20 -I..\HARDWARE\NRF24L01 -I..\HARDWARE\SRAM -I..\MALLOC -I..\HARDWARE\SD -I..\FATFS\exfuns -I..\FATFS\src -I..\USMART -I..\FATFS\src\option -I..\HARDWARE\SDIO -I..\TEXT -I..\HARDWARE\W25QXX -I..\HARDWARE\SGP30 -I..\HARDWARE\DHT11 -I..\HARDWARE\ADC-I F:\单片机业务\MCU_design\何泽清\USER\RTE-I D:\MDK5\install\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5\install\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\adc.o --omf_browse ..\obj\adc.crf --depend ..\obj\adc.d)
+I (..\HARDWARE\ADC\adc.h)(0x5EB0A1CD)
 I (..\SYSTEM\sys\sys.h)(0x5822B9CE)
 I (..\USER\stm32f10x.h)(0x5822B9CE)
 I (..\CORE\core_cm3.h)(0x5822B9CD)
@@ -769,6 +769,35 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_cec.h)(0x5822B9CD)
 I (..\STM32F10x_FWLib\inc\stm32f10x_crc.h)(0x5822B9CD)
 I (..\STM32F10x_FWLib\inc\stm32f10x_dac.h)(0x5822B9CD)
 I (..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_exti.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_flash.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_fsmc.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_i2c.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_iwdg.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_pwr.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_rtc.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_sdio.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\misc.h)(0x5822B9CD)
+F (..\STM32F10x_FWLib\src\stm32f10x_adc.c)(0x5822B9CE)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\REMOTE -I..\HARDWARE\ADXL345 -I..\HARDWARE\DS18B20 -I..\HARDWARE\NRF24L01 -I..\HARDWARE\SRAM -I..\MALLOC -I..\HARDWARE\SD -I..\FATFS\exfuns -I..\FATFS\src -I..\USMART -I..\FATFS\src\option -I..\HARDWARE\SDIO -I..\TEXT -I..\HARDWARE\W25QXX -I..\HARDWARE\SGP30 -I..\HARDWARE\DHT11 -I..\HARDWARE\ADC-I F:\单片机业务\MCU_design\何泽清\USER\RTE-I D:\MDK5\install\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I D:\MDK5\install\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_adc.o --omf_browse ..\obj\stm32f10x_adc.crf --depend ..\obj\stm32f10x_adc.d)
+I (..\STM32F10x_FWLib\inc\stm32f10x_adc.h)(0x5822B9CD)
+I (..\USER\stm32f10x.h)(0x5822B9CE)
+I (..\CORE\core_cm3.h)(0x5822B9CD)
+I (D:\MDK5\install\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\USER\system_stm32f10x.h)(0x5822B9CE)
+I (..\USER\stm32f10x_conf.h)(0x5822B9CE)
+I (..\STM32F10x_FWLib\inc\stm32f10x_bkp.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_can.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_cec.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_crc.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_dac.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h)(0x5822B9CD)
+I (..\STM32F10x_FWLib\inc\stm32f10x_dma.h)(0x5822B9CD)
 I (..\STM32F10x_FWLib\inc\stm32f10x_exti.h)(0x5822B9CD)
 I (..\STM32F10x_FWLib\inc\stm32f10x_flash.h)(0x5822B9CD)
 I (..\STM32F10x_FWLib\inc\stm32f10x_fsmc.h)(0x5822B9CD)
