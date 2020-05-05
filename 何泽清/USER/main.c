@@ -15,6 +15,7 @@
 #include "dht11.h" 	
 #include "adc.h"
 #include "stdio.h"
+#include "buzzer.h"
 /************************************************
  ALIENTEK战舰STM32开发板实验40
  汉字显示 实验 
@@ -36,6 +37,9 @@ void LCD_display();
 //延迟时间
 void Delay (uint32_t nCount);
  
+//判断阈值
+void JThreshold();
+
  int main(void)
  {	
 	u32 fontcnt; 
@@ -57,6 +61,7 @@ void Delay (uint32_t nCount);
 	W25QXX_Init();				//初始化W25Q128
 	DHT11_Init();
 	Adc_Init();		  		//ADC初始化
+	buzzer_Init();			//蜂鸣器是否初始化
  	my_mem_init(SRAMIN);		//初始化内部内存池
 	exfuns_init();				//为fatfs相关变量申请内存  
  	f_mount(fs[0],"0:",1); 		//挂载SD卡 
@@ -113,6 +118,7 @@ UPD:
 		
 		//LED进行数据刷新
 		LCD_display();
+		JThreshold();
 	}
 #endif
 	   /* Busy loop for initialization. The main loop does not work without a sensor. */
@@ -214,7 +220,21 @@ UPD:
 	} 
 #endif
 }
-
+void JThreshold()
+{
+	if((u8temperature <= 13 || u8temperature >=35) || (u8humidity <= 50 || u8humidity >= 85) || (CO2Concentration >= 1500) || (AConcentration >= 33))
+	{		
+//		 printf("huxiaoguang enable\r\n");
+		 buzzer_Enable(1);		//使能蜂鸣器
+	}
+#if 0
+	else
+	{
+		 printf("huxiaoguang unenable\r\n");
+		 buzzer_Enable(0);		//使能蜂鸣器
+	}
+#endif
+}
 void Delay (uint32_t nCount)
 {
   for(; nCount != 0; nCount--);
